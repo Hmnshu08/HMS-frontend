@@ -1,0 +1,12 @@
+.userbody{
+    font-size: larger;
+    position: relative;
+    top: 8vh;
+}
+.header{
+    font-size: larger;
+    font-weight: 700;
+    padding: 20px;
+    padding-bottom: 50px;
+    text-transform:uppercase;
+}

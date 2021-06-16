@@ -1,0 +1,15 @@
+.navbar{
+    background-color: #e3f2fd;
+    text-transform:uppercase
+}
+.login{
+    color: white;
+    font-weight: 600;
+}
+.login:hover{
+
+    background-color: aliceblue;
+    color: white;
+    border-radius: 5px;
+    
+}
