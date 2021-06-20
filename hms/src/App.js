@@ -13,6 +13,7 @@ import Home from './components/Home/Home';
 import User from './components/User/User';
 import Login from './components/Login/Login';
 import NotFound from './components/404/NotFound';
+import AddUser from './components/AddUser/AddUser';
 
 
 
@@ -37,6 +38,8 @@ function App() {
           <Route exact path="/user" component={User}>
           </Route>
           <Route exact path="/auth" component={Login}>          
+          </Route>
+          <Route exact path="/user/add" component={AddUser}>          
           </Route>
           <Route component={NotFound}></Route>
         </Switch>

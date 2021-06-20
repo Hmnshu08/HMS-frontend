@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Component, Components } from 'react';
 import './user.css'
 import axios from 'axios';
 import {
@@ -6,9 +6,16 @@ import {
 } from 'reactstrap';
 import { async } from 'regenerator-runtime';
 import { Link } from 'react-router-dom';
+import AddUser from '../AddUser/AddUser';
+
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route
+} from "react-router-dom";
 
 
-export default function User() {
+function User() {
 
     const [user, setUser] = useState([]);
 
@@ -18,16 +25,20 @@ export default function User() {
 
     const loadUsers = async () => {
         const result = await axios.get("http://localhost:8088/users");
-        setUser(result.data);
+        setUser(result.data.reverse());
     }
 
 
     return (
         <div>
             <Container>
+               
                 <div className="userbody">
                     <div className="header">
                         User Data
+                    </div>
+                    <div className="addUser">
+                        <Link className="btn btn-primary mr-2" to="/user/add">Add New User</Link>
                     </div>
                     <div class="table-responsive-sm">
                         <table class="table shadow table-hover table-sm">
@@ -68,3 +79,4 @@ export default function User() {
         </div>
     )
 }
+export default User

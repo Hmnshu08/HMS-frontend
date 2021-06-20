@@ -7,6 +7,10 @@
     font-size: larger;
     font-weight: 700;
     padding: 20px;
-    padding-bottom: 50px;
+    padding-bottom: 10px;
     text-transform:uppercase;
+}
+.addUser{
+    text-align: end;
+    padding: 15px;
 }
