@@ -7,6 +7,7 @@ import { async } from 'regenerator-runtime';
 import { Link } from 'react-router-dom';
 import AddUser from '../AddUser/AddUser';
 import swal from 'sweetalert';
+import './reservation.css'
 import {
     BrowserRouter as Router,
     Switch,
@@ -69,14 +70,51 @@ function Reservation() {
                 });
     };
 
+    const [room, setRoom] = useState([]);
+
+    useEffect(() => {
+        loadRoom();
+    }, []);
+
+    const loadRoom = async () => {
+        const result = await axios.get("http://localhost:8091/search");
+        setRoom(result.data.reverse());
+    }
+
     return (
         <div>
+            <div className="roomsearch res">
+                <div class="table-responsive-sm">
+                    <table class="table shadow table-hover table-sm">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Rooms Available</th>
+                                <th scope="col">Room Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                room.map((rooms) => (
+                                    <tr>
+                                        <td>{rooms.roomNumber}</td>
+                                        <td>{rooms.standardPrice} ₹</td>
+                                    </tr>
+
+                                ))
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             <Container>
 
                 <div className="userbody">
                     <div className="header">
                         Reservation Data
                     </div>
+
+
                     <div className="addUser">
                         <Link className="btn btn-primary mr-2" to="/reservation/add">Create a Booking</Link>
                     </div>

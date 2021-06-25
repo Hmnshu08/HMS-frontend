@@ -73,18 +73,18 @@ function AddReservation() {
         setRoom(result.data.reverse());
     }
 
-     //search for guest
+    //search for guest
 
-     const [guest, setGuest] = useState([]);
+    const [guest, setGuest] = useState([]);
 
-     useEffect(() => {
-         loadGuest();
-     }, []);
- 
-     const loadGuest = async () => {
-         const result = await axios.get("http://localhost:8081/guest");
-         setGuest(result.data.reverse());
-     }
+    useEffect(() => {
+        loadGuest();
+    }, []);
+
+    const loadGuest = async () => {
+        const result = await axios.get("http://localhost:8081/guest");
+        setGuest(result.data.reverse());
+    }
 
     return (
         <div>
@@ -98,6 +98,7 @@ function AddReservation() {
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col">Rooms Available</th>
+                                <th scope="col">Room Price</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -105,7 +106,9 @@ function AddReservation() {
                                 room.map((rooms) => (
                                     <tr>
                                         <td>{rooms.roomNumber}</td>
+                                        <td>{rooms.standardPrice} ₹</td>
                                     </tr>
+                                    
                                 ))
                             }
 
@@ -126,14 +129,14 @@ function AddReservation() {
                             <select id="inputState" className="form-control" name="guestCode" value={values.guestCode} onChange={handleChange('guestCode')} required >
                                 <option >Select One</option>
                                 {
-                                guest.map((guests) => (
+                                    guest.map((guests) => (
 
-                                    <option value={`${guests.guestCode}`}>{guests.guestCode}</option>
-                                    // <tr>
-                                    //     <td>{rooms.roomNumber}</td>
-                                    // </tr>
-                                ))
-                            }
+                                        <option value={`${guests.guestCode}`}>{guests.guestCode}</option>
+                                        // <tr>
+                                        //     <td>{rooms.roomNumber}</td>
+                                        // </tr>
+                                    ))
+                                }
                             </select>
                         </div>
                         <div className="form-group col-md-6">
@@ -156,14 +159,14 @@ function AddReservation() {
                             <select id="inputState" className="form-control" name="roomNumber" value={values.roomNumber} onChange={handleChange('roomNumber')} required >
                                 <option >Select One</option>
                                 {
-                                room.map((rooms) => (
+                                    room.map((rooms) => (
 
-                                    <option value={`${rooms.roomNumber}`}>{rooms.roomNumber}</option>
-                                    // <tr>
-                                    //     <td>{rooms.roomNumber}</td>
-                                    // </tr>
-                                ))
-                            }
+                                        <option value={`${rooms.roomNumber}`}>{rooms.roomNumber}</option>
+                                        // <tr>
+                                        //     <td>{rooms.roomNumber}</td>
+                                        // </tr>
+                                    ))
+                                }
                             </select>
                         </div>
 

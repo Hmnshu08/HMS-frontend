@@ -1,4 +1,7 @@
 .roomsearch{
     position: absolute;
-    padding-left: 50px;
+    padding-left: 10px;
+}
+.res{
+    padding-top:10px;
 }

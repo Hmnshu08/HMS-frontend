@@ -26,7 +26,7 @@ function EditGuest() {
     const { guestCode, name, gender, email, city, state, country, postalCode, idType, govId, addresss, contact, phone } = values;
 
     const onInputChange = e => {
-        setValues({ ...values, [name]: e.target.value });
+        setValues({ ...values, [e.target.name]: e.target.value });
     };
 
     useEffect(() => {
@@ -77,15 +77,15 @@ function EditGuest() {
                     <div className="form-row">
                         <div className="form-group col-md-6">
                             <label for="inputEmail4">Guest Code:</label>
-                            <input type="text" class="form-control" name="username" value={values.guestCode} onChange={e => onInputChange(e)} required />
+                            <input type="text" class="form-control" name="username" value={guestCode} onChange={e => onInputChange(e)} required />
                         </div>
                         <div className="form-group col-md-6">
                             <label for="inputEmail4">Name:</label>
-                            <input type="text" class="form-control" name="name" value={values.name} onChange={e => onInputChange(e)} required />
+                            <input type="text" class="form-control" name="name" value={name} onChange={e => onInputChange(e)} required />
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputState">Choose Gender</label>
-                            <select id="inputState" className="form-control" name="gender" value={values.gender} onChange={e => onInputChange(e)} required >
+                            <select id="inputState" className="form-control" name="gender" value={gender} onChange={e => onInputChange(e)} required >
                                 <option >Select One</option>
                                 <option value="M">M</option>
                                 <option value="F">F</option>
@@ -94,27 +94,27 @@ function EditGuest() {
                         </div>
                         <div className="form-group col-md-6">
                             <label for="inputPassword4">Email:</label>
-                            <input type="email" class="form-control" name="email" value={values.email} onChange={e => onInputChange(e)} required />
+                            <input type="email" class="form-control" name="email" value={email} onChange={e => onInputChange(e)} required />
                         </div>
                         <div className="form-group col-md-6">
                             <label for="inputPassword4">City:</label>
-                            <input type="text" class="form-control" name="city" value={values.city} onChange={e => onInputChange(e)}  />
+                            <input type="text" class="form-control" name="city" value={city} onChange={e => onInputChange(e)}  />
                         </div>
                         <div className="form-group col-md-6">
                             <label for="inputPassword4">State:</label>
-                            <input type="text" class="form-control" name="state" value={values.state} onChange={e => onInputChange(e)}  />
+                            <input type="text" class="form-control" name="state" value={state} onChange={e => onInputChange(e)}  />
                         </div>
                         <div className="form-group col-md-6">
                             <label for="inputPassword4">Country:</label>
-                            <input type="text" class="form-control" name="country" value={values.country} onChange={e => onInputChange(e)}  />
+                            <input type="text" class="form-control" name="country" value={country} onChange={e => onInputChange(e)}  />
                         </div>
                         <div className="form-group col-md-6">
                             <label for="inputPassword4">Postal Code:</label>
-                            <input type="number" class="form-control" name="postalCode" maxLength = {6} value={values.postalCode} onChange={e => onInputChange(e)} required />
+                            <input type="number" class="form-control" name="postalCode" maxLength = {6} value={postalCode} onChange={e => onInputChange(e)} required />
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputState">Choose ID Type</label>
-                            <select id="inputState" className="form-control" name="idType" value={values.idType} onChange={e => onInputChange(e)} required >
+                            <select id="inputState" className="form-control" name="idType" value={idType} onChange={e => onInputChange(e)} required >
                                 <option >Select One</option>
                                 <option value="Voter">Voter</option>
                                 <option value="Pan">Pan</option>
@@ -125,19 +125,19 @@ function EditGuest() {
                         </div>
                         <div className="form-group col-md-6">
                             <label for="inputPassword4">Gov ID:</label>
-                            <input type="text" class="form-control" name="govId" maxLength = "10" value={values.govId} onChange={e => onInputChange(e)} required />
+                            <input type="text" class="form-control" name="govId" maxLength = "10" value={govId} onChange={e => onInputChange(e)} required />
                         </div>
                         <div className="form-group col-md-6">
                             <label for="inputPassword4">Address:</label>
-                            <input type="text" class="form-control" name="addresss" value={values.addresss} onChange={e => onInputChange(e)}  />
+                            <input type="text" class="form-control" name="addresss" value={addresss} onChange={e => onInputChange(e)}  />
                         </div>
                         <div className="form-group col-md-6">
                             <label for="inputPassword4">Contact:</label>
-                            <input type="text" class="form-control" name="contact" maxLength = "10" value={values.contact} onChange={e => onInputChange(e)} required />
+                            <input type="text" class="form-control" name="contact" maxLength = "10" value={contact} onChange={e => onInputChange(e)} required />
                         </div>
                         <div className="form-group col-md-6">
                             <label for="inputPassword4">Phone:</label>
-                            <input type="text" class="form-control" name="phone" maxLength = "8" value={values.phone} onChange={e => onInputChange(e)}  />
+                            <input type="text" class="form-control" name="phone" maxLength = "8" value={phone} onChange={e => onInputChange(e)}  />
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>

@@ -105,7 +105,7 @@ function AddGuest() {
                         </div>
                         <div className="form-group col-md-6">
                             <label for="inputPassword4">Country:</label>
-                            <input type="text" class="form-control" name="country" value={values.country} onChange={handleChange('country')}  />
+                            <input type="text" class="form-control" disabled name="country" value={values.country} onChange={handleChange('country')}  />
                         </div>
                         <div className="form-group col-md-6">
                             <label for="inputPassword4">Postal Code:</label>
@@ -128,7 +128,7 @@ function AddGuest() {
                         </div>
                         <div className="form-group col-md-6">
                             <label for="inputPassword4">Address:</label>
-                            <input type="text" class="form-control" name="addresss" value={values.addresss} onChange={handleChange('addresss')}  />
+                            <input type="text" class="form-control"  autocomplete="off" name="addresss" value={values.addresss} onChange={handleChange('addresss')}  />
                         </div>
                         <div className="form-group col-md-6">
                             <label for="inputPassword4">Contact:</label>
